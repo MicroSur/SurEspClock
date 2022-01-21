@@ -1,0 +1,18 @@
+
+chip	color	chip_pin	esp_pin
+
+dht22	red		1			3v3
+		orange	2			D3
+		brown	4			GND
+		
+RTC		grey				D1
+		violet				D2
+		blue				GND
+		
+LED		red		+5v			VIn
+		brown	GND			GND
+		yellow	CS			D8
+		green	CLK			D5
+		white	DIn			D7
+		
+
