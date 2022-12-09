@@ -175,6 +175,7 @@ void getDate(char *psz)
     ntp_get = false;
   } else {
     wd = RTC.getWeekday();
+    wd = wd == 0 ? 7 : wd ; // days 1-7
   }
 
   if ( ((int)dht.readTemperature() > 99) or ((int)dht.readHumidity() > 99) ) 
@@ -210,7 +211,7 @@ void timeCheck() {
   s = tm.tm_sec;          // seconds after the minute  0-61*
   //* tm_sec is generally 0-59. The extra range is to accommodate for leap seconds in certain systems.
   wd = tm.tm_wday;         // days since Sunday 0-6
-  wd = wd == 0 ? 7 : wd ; // days 1-7
+  //wd = wd == 0 ? 7 : wd ; // days 1-7
   //(tm.tm_isdst == 1)             // Daylight Saving Time flag
 
   String yearStr = String(yy);
